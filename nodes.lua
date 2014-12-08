@@ -18,6 +18,50 @@ minetest.register_node("steampunk:glass", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
+minetest.register_node("steampunk:glass_pane", {
+		description = "Steampunk Glass Pane",
+		drawtype = "nodebox",
+		tiles = {"steampunk_glass.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky=3,oddly_breakable_by_hand=3},
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -0.05,  0.5, 0.5,  0.05},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -0.05,  0.5, 0.5,  0.05},
+			},
+		},
+		is_ground_content = false,
+})
+
+minetest.register_node("steampunk:glass_pane_flat", {
+		description = "Steampunk Glass Pane",
+		drawtype = "nodebox",
+		tiles = {"steampunk_glass.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky=3,oddly_breakable_by_hand=3},
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -.5,  0.5, 0.5,  -0.4},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -0.5,  0.5, 0.5,  -0.4},
+			},
+		},
+		is_ground_content = false,
+})
+
 minetest.register_node("steampunk:glass_black", {
 	description = "Steampunk Black Glass",
 	drawtype = "glasslike",
@@ -476,6 +520,28 @@ minetest.register_node("steampunk:iron_bars", {
 		is_ground_content = false,
 })
 
+minetest.register_node("steampunk:iron_bars_flat", {
+		description = "Steampunk Iron Bars",
+		drawtype = "nodebox",
+		tiles = {"steampunk_bars.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		groups = {cracky=1,level=2},
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -.5,  0.5, 0.5,  -0.4},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.5, -0.5, -0.5,  0.5, 0.5,  -0.4},
+			},
+		},
+		is_ground_content = false,
+})
+
 minetest.register_node("steampunk:steelpanel", {
 	description = "Steampunk Steel Panel",
 	tiles = {"steampunk_steelpanel.png"},
@@ -536,6 +602,48 @@ stairs.register_stair_and_slab("steampunk_cobble", "steampunk:cobble",
 		{"steampunk_cobble.png"},
 		"Steampunk Cobblestone Stair",
 		"Steampunk Cobblestone Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_brick", "steampunk:brick",
+		{cracky=3},
+		{"steampunk_brick.png"},
+		"Steampunk Brick Stair",
+		"Steampunk Brick Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_brick_grey", "steampunk:brick_grey",
+		{cracky=3},
+		{"steampunk_brick_grey.png"},
+		"Steampunk Grey Brick Stair",
+		"Steampunk Grey Brick Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_stonebrick", "steampunk:stonebrick",
+		{cracky=3},
+		{"steampunk_stonebrick.png"},
+		"Steampunk Stone Brick Stair",
+		"Steampunk Stone Brick Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_cobble", "steampunk:cobble",
+		{cracky=3},
+		{"steampunk_cobble.png"},
+		"Steampunk Cobblestone Stair",
+		"Steampunk Cobblestone Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_steelblock", "steampunk:steelblock",
+		{cracky=1,light_source=2},
+		{"steampunk_steel_block.png"},
+		"Steampunk Steelblock Stair",
+		"Steampunk sSeelblock Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("steampunk_copper_block", "steampunk:copperblock",
+		{cracky=1,level=2},
+		{"steampunk_copper_block.png"},
+		"Steampunk Copper block Stair",
+		"Steampunk Copper block Slab",
 		default.node_sound_stone_defaults())
 
 doors.register_door("steampunk:door_steampunk_wood", {
